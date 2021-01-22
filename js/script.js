@@ -106,15 +106,22 @@ const arrayAnimal = icons.filter((element) => element.type == "animal");
 const arrayVegetable = icons.filter((element) => element.type == "vegetable");
 const arrayUser = icons.filter((element) => element.type == "user");
 
+//aggiungo i colori
+
+arrayAnimal.forEach(element => element.color = "blue");
+arrayVegetable.forEach(element => element.color = "orange");
+arrayUser.forEach(element => element.color = "purple");
+
+
 // stampo le icone nei box
 
 const container = $('#container');
 
 icons.forEach((element) => {
-    const {name, family, prefix} = element;
+    const {name, family, prefix, color} = element;
     container.append (`
     <div class="box">
-        <i class = "${family} ${prefix}${name}"></i>
+        <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
     </div>
     `)
 });
