@@ -161,6 +161,16 @@ $('#select').change(function(){
         </div>
         `)
     });
+    } else if (choice == "ALL") {
+        $('#container').html("");
+        icons.forEach((element) => {
+        const {name, family, prefix, color} = element;
+        container.append (`
+        <div class="box">
+            <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
+        </div>
+        `)
+    });
     }
 });
 
