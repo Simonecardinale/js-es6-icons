@@ -128,18 +128,16 @@ icons.forEach((element) => {
 
 //avvio la selezione della tipologia di icona
 
-// $('#select').change(function(){
-//     const choice = $(this).val();
-//     console.log(choice);
-//     if ($(this) == "animal") {
-//         document.getElementById("container").innerHTML = arrayAnimal.forEach((element) => {
-//             const {name, family, prefix, color} = element;
-//             container.append (`
-//             <div class="box">
-//                 <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
-//             </div>
-//             `)
-//         });
-//     }
-// });
+$('#select').change(function(){
+    const choice = $(this).val();
+    if (choice == "animal") {
+        document.getElementById("container").innerHTML = const {name, family, prefix, color} = arrayAnimal;
+        container.append (`
+        <div class="box">
+            <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
+        </div>
+        `);
+    }
+});
+
 
