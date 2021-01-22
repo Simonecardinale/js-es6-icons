@@ -116,6 +116,7 @@ arrayUser.forEach(element => element.color = "purple");
 // stampo le icone nei box
 
 const container = $('#container');
+const selected = $("#select")
 
 icons.forEach((element) => {
     const {name, family, prefix, color} = element;
@@ -163,4 +164,12 @@ $('#select').change(function(){
     }
 });
 
+//option dinamiche
 
+const option = ["ALL", "animal", "vegetables", "user"];
+
+option.forEach((element) => {
+    selected.append(`
+    <option value="${element}">${element}</option>
+    `)
+})
