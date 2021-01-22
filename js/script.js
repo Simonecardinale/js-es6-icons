@@ -120,7 +120,7 @@ const container = $('#container');
 icons.forEach((element) => {
     const {name, family, prefix, color} = element;
     container.append (`
-    <div class="box">
+    <div #box class="box">
         <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
     </div>
     `)
@@ -131,7 +131,7 @@ icons.forEach((element) => {
 $('#select').change(function(){
     const choice = $(this).val();
     if (choice == "animal") {
-    document.getElementById("container").innerHTML = "";
+    $('#container').html("");
     arrayAnimal.forEach((element) => {
         const {name, family, prefix, color} = element;
         container.append (`
@@ -141,7 +141,7 @@ $('#select').change(function(){
         `)
     });
     } else if (choice == "vegetables") {
-        document.getElementById("container").innerHTML = $('header');
+        $('#container').html("");
         arrayVegetable.forEach((element) => {
         const {name, family, prefix, color} = element;
         container.append (`
@@ -151,7 +151,7 @@ $('#select').change(function(){
         `)
     });
     } else if (choice == "user") {
-        document.getElementById("container").innerHTML ="";
+        $('#container').html("");
         arrayUser.forEach((element) => {
         const {name, family, prefix, color} = element;
         container.append (`
@@ -160,7 +160,7 @@ $('#select').change(function(){
         </div>
         `)
     });
-    } 
+    }
 });
 
 
