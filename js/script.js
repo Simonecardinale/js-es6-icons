@@ -118,14 +118,7 @@ arrayUser.forEach(element => element.color = "purple");
 const container = $('#container');
 const selected = $("#select")
 
-icons.forEach((element) => {
-    const {name, family, prefix, color} = element;
-    container.append (`
-    <div #box class="box">
-        <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
-    </div>
-    `)
-});
+coloredBoxes(icons, container);
 
 //avvio la selezione della tipologia di icona
 
@@ -133,44 +126,16 @@ $('#select').change(function(){
     const choice = $(this).val();
     if (choice == "animal") {
     $('#container').html("");
-    arrayAnimal.forEach((element) => {
-        const {name, family, prefix, color} = element;
-        container.append (`
-        <div class="box">
-            <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
-        </div>
-        `)
-    });
+    coloredBoxes(arrayAnimal, container)
     } else if (choice == "vegetables") {
         $('#container').html("");
-        arrayVegetable.forEach((element) => {
-        const {name, family, prefix, color} = element;
-        container.append (`
-        <div class="box">
-            <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
-        </div>
-        `)
-    });
+        coloredBoxes(arrayVegetable, container)
     } else if (choice == "user") {
         $('#container').html("");
-        arrayUser.forEach((element) => {
-        const {name, family, prefix, color} = element;
-        container.append (`
-        <div class="box">
-            <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
-        </div>
-        `)
-    });
+        coloredBoxes(arrayUser, container)
     } else if (choice == "ALL") {
         $('#container').html("");
-        icons.forEach((element) => {
-        const {name, family, prefix, color} = element;
-        container.append (`
-        <div class="box">
-            <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
-        </div>
-        `)
-    });
+        coloredBoxes(icons, container);
     }
 });
 
@@ -183,3 +148,19 @@ option.forEach((element) => {
     <option value="${element}">${element}</option>
     `)
 })
+
+
+
+
+
+
+function coloredBoxes (array, div) {
+    array.forEach((element) => {
+        const {name, family, prefix, color} = element;
+        div.append (`
+        <div #box class="box">
+        <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
+        </div>
+        `)
+    });
+}
