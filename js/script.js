@@ -100,4 +100,22 @@ const icons = [
 const color = ["blue", "orange", "purple"];
 
 
-icons.forEach((element, index) => console.log(index));
+//divido l'array principale in 3 in base al type
+
+const arrayAnimal = icons.filter((element) => element.type == "animal");
+const arrayVegetable = icons.filter((element) => element.type == "vegetable");
+const arrayUser = icons.filter((element) => element.type == "user");
+
+// stampo le icone nei box
+
+const container = $('#container');
+
+icons.forEach((element) => {
+    const {name, family, prefix} = element;
+    container.append (`
+    <div class="box">
+        <i class = "${family} ${prefix}${name}"></i>
+    </div>
+    `)
+});
+
