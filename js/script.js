@@ -131,13 +131,36 @@ icons.forEach((element) => {
 $('#select').change(function(){
     const choice = $(this).val();
     if (choice == "animal") {
-        document.getElementById("container").innerHTML = const {name, family, prefix, color} = arrayAnimal;
+    document.getElementById("container").innerHTML = "";
+    arrayAnimal.forEach((element) => {
+        const {name, family, prefix, color} = element;
         container.append (`
         <div class="box">
             <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
         </div>
-        `);
-    }
+        `)
+    });
+    } else if (choice == "vegetables") {
+        document.getElementById("container").innerHTML = $('header');
+        arrayVegetable.forEach((element) => {
+        const {name, family, prefix, color} = element;
+        container.append (`
+        <div class="box">
+            <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
+        </div>
+        `)
+    });
+    } else if (choice == "user") {
+        document.getElementById("container").innerHTML ="";
+        arrayUser.forEach((element) => {
+        const {name, family, prefix, color} = element;
+        container.append (`
+        <div class="box">
+            <i class = "${family} ${prefix}${name}" style = "color: ${color}"></i>
+        </div>
+        `)
+    });
+    } 
 });
 
 
